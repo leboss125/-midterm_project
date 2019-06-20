@@ -4,7 +4,7 @@ const express = require('express');
 const router  = express.Router();
 
 module.exports = (knex) => {
-  router.get("/:id/order", (req, res) => {
+  router.get("/", (req, res) => {
   console.log(req.params.id)
     res.render('register')
   });
