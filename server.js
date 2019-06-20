@@ -40,8 +40,11 @@ app.use(express.static("public"));
 //app.use("/api/users", usersRoutes(knex));
 
 // Home page
+
 app.use("/", loginRoute(knex));
 app.use("/register", registerRoute(knex));
+app.use("/restaurants", restaurantsRoute(knex));
+
 
 
 
