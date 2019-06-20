@@ -1,17 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Home Page</title>
 
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+<head>
+  <title>Home Page</title>
 
-    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
-  </head>
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
+</head>
 
-  <body>
-    <h1>Hello World!</h1>
-  </body>
+<body>
+
+<%# include ./partials/footer %>
+
+  <main class="home-page">
+    <section class="sumary">
+      <article>
+        <h1>Welcome</h1>
+        <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.
+          Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme
+          assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait
+          que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en
+          soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des
+          passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte,
+          comme Aldus PageMaker.
+        </p>
+      </article>
+    </section>
+
+    <section class="login-form">
+      <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <div>
+          <a href="#">Create account</a>
+        </div><br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </section>
+  </main>
+      <% include ./partials/footer %>
+</body>
 </html>
