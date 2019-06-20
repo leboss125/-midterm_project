@@ -15,12 +15,11 @@
 
 <body>
 
-<%# include ./partials/footer %>
-
+<% include ./partials/_header %>
   <main class="home-page">
     <section class="sumary">
       <article>
-        <h1>Welcome</h1>
+        <h1>Welcome to Petite Poulet</h1>
         <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.
           Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme
           assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait
@@ -45,12 +44,12 @@
           <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
         </div>
         <div>
-          <a href="#">Create account</a>
+          <a href="/register">Create account</a>
         </div><br>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </section>
   </main>
-      <% include ./partials/footer %>
+      <% include ./partials/_footer %>
 </body>
 </html>
