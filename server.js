@@ -45,7 +45,7 @@ app.get("/", (req, res) => {
 
 // Page to see specific restaurent menu and order fooD
 app.get("/restaurent/order", (req, res) => { //need to change path to /restaurent/:id/order 
-  res.render("index");
+  res.render("order");
 });
 
 app.listen(PORT, () => {
