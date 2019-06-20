@@ -1,0 +1,17 @@
+main.register-page{
+    height: 100vh;
+}
+
+.form-register{
+    display: flex;
+    align-items: center;
+}
+main.register-page form{
+
+    width: 400px;
+    margin: auto;
+    background:  rgb(90, 89, 89);
+    color: white;
+    padding: 20px;
+    border-radius: 20px;
+}
