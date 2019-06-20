@@ -1,7 +1,27 @@
-body {
-  background-color: #EEE;
 
-  h1 {
-    color: #244751;
+footer{
+  width: 100%;
+  padding: 10px;
+  background: rgb(55, 56, 55);
+  border: none;
+  ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    li{
+      list-style: none;
+    }
+    li a{
+      color: white;
+      font-weight: bold;
+      &:hover{
+        color: grey;
+        transition: 1s all;
+        text-decoration: none;
+      }
+    }
   }
 }
+// login page main style 
+@import 'login.scss';
+@import 'register.scss'

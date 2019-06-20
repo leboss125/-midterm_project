@@ -1,0 +1,32 @@
+main.home-page{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+  }
+  main.home-page section{
+    width: 50%;
+    display: flex;
+    align-items: center;
+  }
+  
+  section.login-form form{
+  width: 80%;
+  padding: 20px;
+  margin: auto;
+  padding-top:20px;
+  }
+  
+  section.sumary{
+    background: rgb(83, 83, 83);
+    p{
+      width: 80%;
+      margin: auto;
+      color: white;
+    }
+    h1{
+      text-align: center;
+      padding: 20px;
+      color: white;
+    }
+  
+  }
