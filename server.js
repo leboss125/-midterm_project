@@ -44,6 +44,7 @@ app.use(express.static("public"));
 app.use("/", loginRoute(knex));
 app.use("/register", registerRoute(knex));
 app.use("/restaurants", restaurantsRoute(knex));
+app.use("/orders", orderStatusRoute(knex));
 
 
 
