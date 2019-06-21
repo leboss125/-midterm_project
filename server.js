@@ -17,6 +17,7 @@ const knexLogger  = require('knex-logger');
 // Seperated Routes for each Resource
 const loginRoute = require('./routes/login_route');
 const registerRoute = require('./routes/register_route');
+const restaurantsRoute = require('./routes/restaurants_route');
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
