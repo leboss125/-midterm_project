@@ -18,32 +18,35 @@
 
 <body>
 
-  <%# include ./partials/footer %>
-
+  <% include ./partials/_header %>
   <main class="register-page form-register">
     <section class="container">
 
-      <form>
+      <form action="/register" method="POST">
         <h2>Register</h2>
         <div class="form-group">
           <label for="exampleInputEmail1">Username address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+          <input type="email" class="form-control" name="username" id="exampleInputEmail1" aria-describedby="emailHelp"
             placeholder="Enter username">
           <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          <input type="password" name="password1" class="form-control" id="exampleInputPassword1" placeholder="Password">
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Confirme Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          <input type="password" name="password2" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+         <div class="form-group">
+          <label for="exampleInputPassword1">Phone number</label>
+          <input type="number" name="phonenumber" class="form-control" id="exampleInputPassword1" placeholder="Phone number">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </section>
   </main>
-  <% include ./partials/footer %>
+  <% include ./partials/_footer %>
 </body>
 
 </html>

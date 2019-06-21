@@ -15,7 +15,9 @@ const morgan      = require('morgan');
 const knexLogger  = require('knex-logger');
 
 // Seperated Routes for each Resource
-const usersRoutes = require("./routes/users");
+const loginRoute = require('./routes/login_route');
+const registerRoute = require('./routes/register_route');
+const restaurantsRoute = require('./routes/restaurants_route');
 
 const orderRouter = require("./routes/order_route")
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
@@ -38,7 +40,16 @@ app.use(express.static("public"));
 
 // Mount all resource routes
 //app.use("/api/users", usersRoutes(knex));
-app.use("/restaurents", orderRouter(knex)); 
+app.use("/restaurants", orderRouter(knex)); 
+// Home page
+
+app.use("/", loginRoute(knex));
+app.use("/register", registerRoute(knex));
+app.use("/restaurants", restaurantsRoute(knex));
+
+
+
+
 
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);
