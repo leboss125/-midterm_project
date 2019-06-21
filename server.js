@@ -48,9 +48,6 @@ app.use("/restaurants", restaurantsRoute(knex));
 app.use("/orders", orderStatusRoute(knex));
 
 
-
-
-
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);
 });
