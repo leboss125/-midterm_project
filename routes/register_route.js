@@ -15,11 +15,19 @@ function validateData(username, password1, password2, phonenumber) {
 
 module.exports = (knex) => {
   router.get("/", (req, res) => {
-    res.render('register')
+    if(req.session.name && req.session.id && req.session.phone_number){
+
+    res.redirect('/restaurants')
+    }else{
+      res.render('register')
+    }
   });
 
   //post route for  new user
   router.post('/', (req, res) => {
+    if(req.session.name && req.session.id && req.session.phone_number){
+      return res.send('invalid request')
+    }
     const {
       username,
       password1,
@@ -51,4 +59,5 @@ module.exports = (knex) => {
     }
   });
   return router;
+  
 }

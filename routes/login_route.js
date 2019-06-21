@@ -7,10 +7,16 @@ const bcrypt = require('bcrypt');
 module.exports = (knex) => {
 
   router.get("/", (req, res) => {
-    res.render('index')
+    if(req.session.name && req.session.id && req.session.phone_number){
+      return res.redirect('/restaurants')
+    }else{
+      res.render('index')
+    }
   });
-
   router.post('/',(req,res) =>{
+    if(req.session.name && req.session.id && req.session.phone_number){
+      return res.send('invalid request')
+    }
     const {username, password} = req.body;
     knex("customers").select('*').where('username',username)
     .then(result =>{
@@ -22,7 +28,8 @@ module.exports = (knex) => {
       if(dbResultArray.length !== 0  && bcrypt.compareSync(password, user.password)){
         const {id, phone_number} = user;
         req.session.id = id;
-        req.session.id = phone_number;
+        req.session.phone_number = phone_number;
+        req.session.name = username;
         res.redirect('/restaurants');
       }else{
         return res.send('please try again');
