@@ -3,7 +3,7 @@ exports.up = function(knex, Promise) {
       table.increments();
       table.string('username');
       table.string('password');
-      table.integer("phone_number")
+      table.bigInteger("phone_number")
     });
   };
   
