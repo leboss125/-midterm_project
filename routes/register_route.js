@@ -26,14 +26,15 @@ module.exports = (knex) => {
       password2,
       phonenumber
     } = req.body;
-
     if (validateData(username, password1, password2, phonenumber)) {
       const passwordHash = bcrypt.hashSync(password1, 10);
+      // look if usename exit in db
       knex.select("username")
         .from("customers")
         .where("username", username)
         .then(userNameList => {
           if (userNameList.length === 0) {
+              // if username dont exist create new user
             return knex('customers')
               .insert([{
                 username:username,
@@ -41,13 +42,12 @@ module.exports = (knex) => {
                 phone_number:phonenumber
               }])
               .then((newUserId) => {
-                res.send('account created');
+                res.send('account created <a href="/">login here</a>');
               });
           }
           res.send('username all ready exist');
           return;
         });
-
     }
   });
   return router;
