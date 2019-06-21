@@ -7,18 +7,18 @@ header nav {
   padding-top: 10px;
   background-color: black;
  }
- 
+
  header h1{
   color: white;
   font-size: 28px;
   margin-top: 5px;
  }
- 
+
  header section{
   color: white;
   font-size: 20px
  }
- 
+
  header a{
   color: white;
   font-size: 20px
@@ -47,6 +47,8 @@ footer{
     }
   }
 }
-// login page main style 
+// login page main style
 @import 'login.scss';
-@import 'register.scss'
+@import 'register.scss';
+@import 'order_status.scss';
+@import 'restaurants.scss';

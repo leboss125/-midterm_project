@@ -3,21 +3,27 @@
   <head>
     <title>Home Page</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+
+    <!-- External CSS -->
+   <link href="https://fonts.googleapis.com/css?family=Knewave&display=swap&subset=latin-ext" rel="stylesheet">
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
   </head>
 
   <body>
-    <div class='is-flex'>
+  <% include ./partials/_header %>
+    <div class='is-flex main'>
       <main class="container">
-              <p>Menu</p> 
-                <div class="container is-shrink is-border order-container"> 
-                <p>Salad</p>
+
+              <p>Menu</p>
+                <div class="container is-shrink is-border order-container">
+                <p class="is-font-item">SEARED TUNA SALAD</p>
+
                  <p>Price: $10.00</p>
                   <form>
                     <div class="form-check">
@@ -25,7 +31,7 @@
                       <label class="form-check-label" for="exampleCheck1">Add</label>
                     </div>
                   </form>
-              </div> 
+              </div>
               <button type="button" class="btn btn-primary">Go Back</button>
       </main>
 
@@ -39,5 +45,6 @@
               <button type="button" class="btn btn-primary">Order Now</button>
       </aside>
     </div>
+  <% include ./partials/_footer %>
   </body>
 </html>

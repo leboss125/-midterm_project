@@ -6,7 +6,7 @@ const router  = express.Router();
 module.exports = (knex) => {
 
   router.get("/", (req, res) => {
-    res.render('orders');
+    res.render('orders_status');
   });
 
   return router;
