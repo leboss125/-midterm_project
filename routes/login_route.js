@@ -35,7 +35,7 @@ module.exports = (knex) => {
         return res.send('please try again');
       }
     })
-     .finally(() => knex.destroy());
+    //  .finally(() => knex.destroy());
   })
   return router;
 }

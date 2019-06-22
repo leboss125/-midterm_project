@@ -25,6 +25,7 @@ module.exports = (knex) => {
 
   //post route for  new user
   router.post('/', (req, res) => {
+    // return a message if user if not log in
     if(req.session.name && req.session.id && req.session.phone_number){
       return res.send('invalid request')
     }

@@ -1,12 +1,17 @@
 <header>
+<% if(typeof name !== 'undefined' ){%>
      <nav id="nav-bar">
    <h1>Petite Poulet</h1>
    <section>
+   <strong class="text-success">  <%= name %> <strong>
      <a href="/logout">Logout</a>
      |
      <a href="#">Order Status</a>
    </section>
  </nav>
-</header> 
- 
+ <%}else{ %>
+  <h2>le poulet vous dit bonjour </h2>
+ <% } %>
 
+ 
+</header> 
