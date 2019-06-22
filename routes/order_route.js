@@ -6,39 +6,21 @@ var twilio = require('twilio');
 
 module.exports = (knex) => {
 
-<<<<<<< HEAD
-  router.get("/", (req, res) => {
-    let templateVars = {
-
-      };
-      console.log(req);
-
-      /*(knex.select("*")
-          .from("restaurents")
-          .then(value => {
-
-            templateVars['restoInfo'] = value;
-            console.log(templateVars);
-            res.render('order',templateVars);
-
-          })).finally()*/
-
-    res.render("order");
-=======
-  router.get("/:id", (req, res) => {
-
+  router.get("/:id", (req, res) => {  
     //obtain data from database
      knex
-      .select("name")
+      .select('restaurents.id','restaurents.name', 'menu_items.name','restaurent_id','price')
       .from("menu_items")
+      .join('restaurents', {'restaurents.id':'menu_items.restaurent_id'})
+      .where('restaurent_id','=',req.params.id) //instead of 1 -> use req.param to get id 
       .then((results) => {
-        console.log(results);
+
         res.render("order",results);
+        console.log(results); 
         
     }); 
     //.finally(() => knex.destroy());
  
->>>>>>> feature/order-fix
   });
 
   router.post("/:id", (req, res) => {
