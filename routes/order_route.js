@@ -1,11 +1,26 @@
-  "use strict";
+"use strict";
 
 const express = require('express');
 const router  = express.Router();
 
 module.exports = (knex) => {
 
-  router.get("/:id", (req, res) => {
+  router.get("/", (req, res) => {
+    let templateVars = {
+
+      };
+      console.log(req);
+
+      /*(knex.select("*")
+          .from("restaurents")
+          .then(value => {
+
+            templateVars['restoInfo'] = value;
+            console.log(templateVars);
+            res.render('order',templateVars);
+
+          })).finally()*/
+
     res.render("order");
   });
 
