@@ -21,10 +21,11 @@
       <main class="menu">
 
               <h2>Menu</h2>
+              <%for(menu of menus){%>
                 <div class="container is-shrink is-border order-container">
                 <p class="is-font-item"><p>SEARED TUNA SALAD</p>
 
-                 <p>Price: $10.00</p>
+                 <p>Price: $<%=menu.price%></p>
                   <form>
                     <div class="form-check">
                       <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -32,6 +33,7 @@
                     </div>
                   </form>
               </div>
+              <%}%>
               <button type="button" class="btn btn-primary">Go Back</button>
       </main>
 

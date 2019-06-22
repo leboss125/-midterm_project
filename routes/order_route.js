@@ -15,7 +15,8 @@ module.exports = (knex) => {
       .where('restaurent_id','=',req.params.id) //instead of 1 -> use req.param to get id 
       .then((results) => {
 
-        res.render("order",results);
+        res.render("order",{menus:results});
+        console.log(results[0].name); 
         console.log(results); 
         
     }); 
