@@ -20,7 +20,7 @@ module.exports = (knex) => {
     const {username, password} = req.body;
     knex("customers").select('*').where('username',username)
     .then(result =>{
-      // array from database 
+      // array from database
       const dbResultArray = result;
       // getting the user
       const user = result[0];
@@ -35,7 +35,7 @@ module.exports = (knex) => {
         return res.send('please try again');
       }
     })
-     .finally(() => knex.destroy());
+     .finally(/*() => knex.destroy()*/);
   })
   return router;
 }

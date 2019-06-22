@@ -8,20 +8,21 @@ module.exports = (knex) => {
 
   router.get("/", (req, res) => {
 
-
+    /*
     if(req.session.name && req.session.id && req.session.phone_number){
       res.render('restaurants');
       console.log(req.session.name ,req.session.id,req.session.phone_number)
     }else{
       res.redirect('/')
     }
+    */
 
 
     let templateVars = {};
 
     (knex.select("username")
         .from("customers")
-        .where('username','mclovin69@gmail.com').then(value => {
+        .then(value => {
 
           templateVars['restoName'] = value;
           console.log(templateVars);
