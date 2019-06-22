@@ -22,7 +22,7 @@ const registerRoute = require('./routes/register_route');
 const restaurantsRoute = require('./routes/restaurants_route');
 const orderStatusRoute = require('./routes/order_status_route');
 
-const orderRouter = require("./routes/order_route")
+const orderRoute = require("./routes/order_route");
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
 //         The :status token will be colored red for server error codes, yellow for client error codes, cyan for redirection codes, and uncolored for all other codes.
@@ -47,7 +47,7 @@ app.use(express.static("public"));
 
 // Mount all resource routes
 //app.use("/api/users", usersRoutes(knex));
-app.use("/restaurants", orderRouter(knex)); 
+app.use("/restaurants/:id", orderRoute(knex));
 // Home page
 
 app.use("/", loginRoute(knex));
