@@ -2,7 +2,12 @@ div.is-flex{
     display: flex
 }
 div.main{
+
     height: 100vh;
+}
+main.menu{
+  width:70%;
+  height: 100vh;
 }
 aside.is-shrink{
     flex-shrink: 2;
@@ -14,16 +19,16 @@ aside.is-shrink{
 }
 
 div.is-border-top{
-    border-top: solid; 
-    border-color: black; 
+    border-top: solid;
+    border-color: black;
 }
 
 div.order-container{
     padding: 10px;
-    margin-bottom: 30px; 
+    margin-bottom: 30px;
 }
 
 .is-font-item{
     font-family: 'Knewave', cursive;
-    font-size: 30px; 
+    font-size: 30px;
 }
