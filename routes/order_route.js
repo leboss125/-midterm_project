@@ -7,20 +7,25 @@ var twilio = require('twilio');
 module.exports = (knex) => {
 
   router.get("/:id", (req, res) => {
+    if(req.session.name && req.session.id && req.session.phone_number){
+   
     //obtain data from database
      knex
       .select('restaurents.id','restaurents.name', 'menu_items.name','restaurent_id','price','menu_items.id')
       .from("menu_items")
       .join('restaurents', {'restaurents.id':'menu_items.restaurent_id'})
-      .where('restaurent_id','=',req.params.id) //instead of 1 -> use req.param to get id
+      .where('restaurent_id','=',req.params.id) 
       .then((results) => {
-
-        res.render("order",{menus:results});
+        var templateVars  = {name:req.session.name, menus:results};
+        res.render("order",templateVars);
         console.log(results[0].name);
         console.log(results);
 
     });
     //.finally(() => knex.destroy());
+  }else{
+    res.redirect('/');
+  }
 
   });
 
