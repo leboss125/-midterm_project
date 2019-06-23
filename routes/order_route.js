@@ -11,7 +11,7 @@ module.exports = (knex) => {
    
     //obtain data from database
      knex
-      .select('restaurents.id','restaurents.name', 'menu_items.name','restaurent_id','price','menu_items.id')
+      .select('restaurents.id','restaurents.name', 'menu_items.name','restaurent_id','price','menu_items.id','menu_items.description')
       .from("menu_items")
       .join('restaurents', {'restaurents.id':'menu_items.restaurent_id'})
       .where('restaurent_id','=',req.params.id) 
