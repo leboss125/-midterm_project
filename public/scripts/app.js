@@ -11,35 +11,42 @@
 
 //retrieving all IDs from individual page
 
-console.log("poulet");
-
 
 $(document).ready(function() {
+  //console.log(parseInt($('button[id]')[1].getAttribute("id").split(":")[1]));
 
-  var count = {
+
+  var counter = {
 
   }
-  var counter = 0;
-  //var ids = new Array();
+  for(var i = 0; i < $('button[id]').length; i++){
+    console.log("poulet");
+    counter[parseInt($('button[id]')[i].getAttribute("id").split(":")[1])] = 0;
+  }
+  console.log(counter);
+  //var counter = 0;
+
+
   $('button[id]').each(function() { //Get elements that have an id=
-   //console.log('hello',$(this));
+
    $(this).click(function(){
 
+    var index = parseInt(this.getAttribute("id").split(":")[1]);
     if(this.getAttribute('id').includes('add')===true){
-      let arg = parseInt(this.getAttribute("id").split(":")[1]);
+
       //console.log(arg)
-      counter++;
-      if(counter>=5){
-        counter = 5;
+      counter[index] ++;
+      if(counter[index] >=5){
+        counter[index] = 5;
       }
     }
     else {
-      counter--;
-      if(counter<0){
-        counter = 0;
+      counter[index] --;
+      if(counter[index] < 0){
+        counter[index] = 0;
       }
     }
-    console.log(counter,this.getAttribute('id'))
+    console.log(counter);
   });
    //ids.push($(this).attr(“id”)); //add id to array
   });
