@@ -5,7 +5,7 @@ exports.up = function(knex, Promise) {
         table.string('name');
         table.bigInteger('phone_number');
         table.string('address');
-        table.string('image');
+        table.text('image');
       });
 };
 

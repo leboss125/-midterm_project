@@ -51,5 +51,5 @@ $(document).ready(function() {
    //ids.push($(this).attr(“id”)); //add id to array
   });
 
-
+console.log(counterObject); 
 });

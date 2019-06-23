@@ -15,7 +15,7 @@ module.exports = (knex) => {
 
       };
 
-      (knex.select("name","id")
+      (knex.select("name","id","image")
           .from("restaurents")
           .then(value => {
 
