@@ -16,11 +16,11 @@
         <section class = "form-inline">
         <% for(var i = 0; i < 4; i++){ %>
           <p class='border'>
-            <img src=<%=restoInfo[i + 4 * j].image%>> 
-            <br> 
+            <img src = "<%=restoInfo[i + 4 * j].image%>">
+            <br>
             <span class='restaurent-tittle'>
-            <a href="/restaurant/<%= restoInfo[i + 4 * j].id %>"> <%= restoInfo[i + 4 * j].name %> </a> 
-            </span> 
+            <a href="/restaurant/<%= restoInfo[i + 4 * j].id %>"> <%= restoInfo[i + 4 * j].name %> </a>
+            </span>
             <br>
           </p>
          <% } %>

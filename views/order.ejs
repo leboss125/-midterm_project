@@ -18,15 +18,15 @@
   <body>
   <% include ./partials/_header %>
     <div class='container'>
-    <div class='row'> 
+    <div class='row'>
       <main class="col-9">
 
               <h2>Menu</h2>
               <%for(menu of menus){%>
                 <div class="is-border order-container"  >
-                <p class="is-font-item"><%=menu.name%></p>
+                <p class="is-font-item" ><%=menu.name%></p>
                 <p><%=menu.description%></p>
-                 <p>Price: $<%=menu.price%></p>
+                 <p id = "<%=menu.id%>">Price: $<%=menu.price%></p>
                   <form>
                     <div class="form-check">
                       <button type="button" class="btn btn-success btn-circle" id = "add:<%=menu.id%>">+</button>

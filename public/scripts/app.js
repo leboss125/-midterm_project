@@ -25,7 +25,7 @@ $(document).ready(function() {
     orderSummary[$('p[id]')[i].getAttribute("id")] = {
 
     };
-    orderSummary[$('p[id]')[i].getAttribute("id")]['name'] = $('p[class]').eq(i).text();
+    orderSummary[$('p[id]')[i].getAttribute("id")]['name'] = $('p[class = is-font-item]').eq(i).text();
     orderSummary[$('p[id]')[i].getAttribute("id")]['freq'] = 0;
     orderSummary[$('p[id]')[i].getAttribute("id")]['price'] = parseFloat($("p[id]").eq(i).text() .split("$")[1]);
 
