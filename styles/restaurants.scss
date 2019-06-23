@@ -1,7 +1,7 @@
 main.restaurants {
   margin: 0px;
   height: 100vh;
-  background-image: url("https://smppharmacy.com/wp-content/uploads/2019/02/food-post.jpg");
+  background-color: whitesmoke;
 }
 
 main.restaurants p{
@@ -28,10 +28,20 @@ main.restaurants a{
 }
 
 img{
-  width: 50%;
-  height: auto;
+  width: 75%;
+  height: 75%;
 }
 
 .form-inline{
   justify-content: space-evenly;
+}
+
+.details{
+  font-size: 14px;
+  font-family: 'Amatic SC', cursive;
+}
+
+.restaurent-tittle{
+  font-family: 'Knewave', cursive;
+  font-size: 30px;
 }
