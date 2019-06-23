@@ -1,23 +1,5 @@
-// $(() => {
-//   $.ajax({
-//     method: "GET",
-//     url: "/api/users"
-//   }).done((users) => {
-//     for(user of users) {
-//       $("<div>").text(user.name).appendTo($("body"));
-//     }
-//   });;
-// });
-
-//retrieving all IDs from individual page
-
 
 $(document).ready(function() {
-  //console.log(parseInt($('button[id]')[1].getAttribute("id").split(":")[1]));
-
-
-
-
 
   var orderSummary= {
   };
@@ -30,8 +12,46 @@ $(document).ready(function() {
     orderSummary[$('p[id]')[i].getAttribute("id")]['price'] = parseFloat($("p[id]").eq(i).text() .split("$")[1]);
 
   }
-  //console.log('price: ',prices);
   console.log('results: ',orderSummary);
+
+
+  function checkFrequency(){
+
+    var obj = {};
+    for(let item in orderSummary){
+      console.log(item, orderSummary[item]);
+      if (orderSummary[item]['freq'] != 0){
+        obj[item] = orderSummary[item];
+      }
+    }
+    return obj;
+  }
+
+  const createOrder = orderObj => {
+    console.log(orderObj);
+    var html = "";
+    var total = 0;
+    for (item in orderObj){
+      html +=`<div>
+                <span>${orderObj[item].name}</span>
+                <span>Quantity: ${orderObj[item].freq}</span>
+                <span>$${round(orderObj[item].price * orderObj[item].freq)}</span>
+              </div>`;
+      total += orderObj[item].price * orderObj[item].freq;
+    }
+    html += `<div>
+                <span> BEFORE TAX: $${round(total)} </span>
+                <span> TAX: $${round(total*0.15)} </span>
+                <span> TOTAL: $${round(total*1.15)} </span>
+              </div>`
+
+    return html;
+  };
+
+  function round(number) {
+    return Math.round(number * 100) / 100;
+  }
+
 
 
   $('button[id]').each(function() { //Get elements that have an id=
@@ -41,9 +61,7 @@ $(document).ready(function() {
     var index = parseInt(this.getAttribute("id").split(":")[1]);
     if(this.getAttribute('id').includes('add')===true){
 
-      //console.log(arg)
       orderSummary[index]['freq'] ++;
-      //prices[index] = prices[index] + parseFloat($('p[id]').eq(index).text().split("$")[1]);
 
       if(orderSummary[index]['freq'] >=5){
         orderSummary[index]['freq'] = 5;
@@ -51,25 +69,17 @@ $(document).ready(function() {
     }
     else if (this.getAttribute('id').includes('remove')===true){
       orderSummary[index]['freq'] --;
-      //prices[index] = prices[index] - parseFloat($('p[id]').eq(index).text().split("$")[1]);
+
       if(orderSummary[index]['freq'] < 0){
         orderSummary[index]['freq'] = 0;
       }
     }
     console.log(orderSummary);
-    //console.log(prices);
 
-    var total = 0;
-    for(count in orderSummary){
-      total = total + orderSummary[count].freq * orderSummary[count].price;
-    }
+    $("#result span").remove()
+    $("#result").prepend((createOrder(checkFrequency())));
+    });
 
-    console.log(total);
-
-
-
-  });
-   //ids.push($(this).attr(“id”)); //add id to array
   });
 
 });
