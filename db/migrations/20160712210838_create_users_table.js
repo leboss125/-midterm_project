@@ -3,7 +3,8 @@ exports.up = function(knex, Promise) {
     table.increments();
     table.string('name');
     table.integer('restaurent_id');
-    table.decimal('price')
+    table.decimal('price');
+    table.string('description'); 
   });
 };
 exports.down = function(knex, Promise) {
