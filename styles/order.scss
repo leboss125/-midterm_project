@@ -5,14 +5,8 @@ div.main{
     height: 100vh;
 }
 
-.is-border{
-    border:solid 1px grey;
-    border-radius: 10px;
-}
-
 div.is-border-top{
     border-top: solid; 
-    border-color: black; 
 }
 
 div.order-container{
@@ -21,6 +15,11 @@ div.order-container{
 }
 
 .is-font-item{
+    font-family: 'Knewave', cursive;
+    font-size: 25px bold;  
+}
+
+.is-font-description{
     font-family: 'Knewave', cursive;
     font-size: 25px bold;  
 }
