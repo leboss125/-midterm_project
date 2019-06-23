@@ -16,15 +16,22 @@ $(document).ready(function() {
   //console.log(parseInt($('button[id]')[1].getAttribute("id").split(":")[1]));
 
 
-  var counter = {
+
+
+
+  var orderSummary= {
+  };
+  for(var i = 0; i < $('p[id]').length; i++){
+    orderSummary[$('p[id]')[i].getAttribute("id")] = {
+
+    };
+    orderSummary[$('p[id]')[i].getAttribute("id")]['name'] = $('p[class]').eq(i).text();
+    orderSummary[$('p[id]')[i].getAttribute("id")]['freq'] = 0;
+    orderSummary[$('p[id]')[i].getAttribute("id")]['price'] = parseFloat($("p[id]").eq(i).text() .split("$")[1]);
 
   }
-  for(var i = 0; i < $('button[id]').length; i++){
-    console.log("poulet");
-    counter[parseInt($('button[id]')[i].getAttribute("id").split(":")[1])] = 0;
-  }
-  console.log(counter);
-  //var counter = 0;
+  //console.log('price: ',prices);
+  console.log('results: ',orderSummary);
 
 
   $('button[id]').each(function() { //Get elements that have an id=
@@ -35,21 +42,34 @@ $(document).ready(function() {
     if(this.getAttribute('id').includes('add')===true){
 
       //console.log(arg)
-      counter[index] ++;
-      if(counter[index] >=5){
-        counter[index] = 5;
+      orderSummary[index]['freq'] ++;
+      //prices[index] = prices[index] + parseFloat($('p[id]').eq(index).text().split("$")[1]);
+
+      if(orderSummary[index]['freq'] >=5){
+        orderSummary[index]['freq'] = 5;
       }
     }
-    else {
-      counter[index] --;
-      if(counter[index] < 0){
-        counter[index] = 0;
+    else if (this.getAttribute('id').includes('remove')===true){
+      orderSummary[index]['freq'] --;
+      //prices[index] = prices[index] - parseFloat($('p[id]').eq(index).text().split("$")[1]);
+      if(orderSummary[index]['freq'] < 0){
+        orderSummary[index]['freq'] = 0;
       }
     }
-    console.log(counter);
+    console.log(orderSummary);
+    //console.log(prices);
+
+    var total = 0;
+    for(count in orderSummary){
+      total = total + orderSummary[count].freq * orderSummary[count].price;
+    }
+
+    console.log(total);
+
+
+
   });
    //ids.push($(this).attr(“id”)); //add id to array
   });
 
-console.log(counterObject); 
 });
