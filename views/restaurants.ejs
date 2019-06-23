@@ -4,6 +4,8 @@
   <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Montserrat&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Knewave&display=swap&subset=latin-ext" rel="stylesheet"> 
   </head>
 
   <body>
@@ -13,11 +15,12 @@
       <% for(var j = 0; j < restoInfo.length / 4; j++){ %>
         <section class = "form-inline">
         <% for(var i = 0; i < 4; i++){ %>
-          <p>
-            <a href="/restaurants/<%= restoInfo[i + 4 * j].id %>"> <%= restoInfo[i + 4 * j].name %> </a>
+          <p class='border'>
+            <img src="https://images.deliveryhero.io/image/fd-ca/LH/s0hu-listing.jpg?width=800&height=584"> 
+            <br> 
+            <a href="/restaurants/<%= restoInfo[i + 4 * j].id %>"> <%= restoInfo[i + 4 * j].name %> </a> 
             <br>
-            <img src="https://images.deliveryhero.io/image/fd-ca/LH/e3ng-listing.jpg?width=800&height=584">
-
+            <span class='details'>$$$, vegan, salad, vegetarian, healthy food</span> 
           </p>
          <% } %>
       <% } %>

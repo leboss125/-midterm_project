@@ -8,3 +8,9 @@
 //     }
 //   });;
 // });
+var idArray = [];
+$('div').each(function () {
+    idArray.push(this.id);
+});
+
+console.log(isArray); 
