@@ -8,20 +8,29 @@ header nav {
   background-color: rgb(55, 56, 55);
  }
 
- header h1{
+ header span.is-main-tittle{
   color: white;
   font-size: 28px;
   margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
  }
 
- header section{
+ header .is-logout-name{
   color: white;
-  font-size: 20px
+  font-size: 20px;
+  display: flex;
+  justify-content: flex-end;  
  }
 
  header a{
   color: white;
   font-size: 20px
+ }
+
+ .is-username{
+  font-family: 'Amatic SC', cursive;
+  font-size: 25px;
  }
 
 footer{

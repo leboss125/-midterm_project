@@ -1,13 +1,18 @@
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 <header>
 <% if(typeof name !== 'undefined' ){%>
      <nav id="nav-bar">
-   <h1>Petite Poulet</h1>
-   <section>
-   <strong class="text-success">  <%= name %> <strong>
+   <span class='is-main-tittle'>
+   <p class='is-username'>Petite Poulet</p>
+   <p class='is-username'><i class="fa fa-user"></i><%= name %></p>
+   </span>
+   <span class='is-logout-name is-username'>
      <a href="/logout">Logout</a>
      |
      <a href="/orders">Order Status</a>
-   </section>
+   </span>
  </nav>
  <%}else{ %>
   <h2>le poulet vous dit bonjour </h2>
