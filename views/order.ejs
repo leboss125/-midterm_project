@@ -9,35 +9,36 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
     <!-- External CSS -->
-   <link href="https://fonts.googleapis.com/css?family=Knewave&display=swap&subset=latin-ext" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Knewave&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap&subset=cyrillic,hebrew,latin-ext,vietnamese" rel="stylesheet">
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
   </head>
 
   <body>
   <% include ./partials/_header %>
-    <div class='is-flex main'>
-      <main class="menu">
+    <div class='container'>
+    <div class='row'> 
+      <main class="col-9">
 
               <h2>Menu</h2>
               <%for(menu of menus){%>
-                <div class="container is-border order-container"  >
-                <p class="is-font-item"><p><%=menu.name%></p>
+                <div class="is-border order-container"  >
+                <p class="is-font-item"><%=menu.name%></p>
 
                  <p>Price: $<%=menu.price%></p>
                   <form>
                     <div class="form-check">
-                      <button type="button" class="btn btn-primary" id = "add:<%=menu.id%>">Add</button>
-                      <button type="button" class="btn btn-primary" id = "remove:<%=menu.id%>">Remove</button>
+                      <button type="button" class="btn btn-success btn-circle" id = "add:<%=menu.id%>">+</button>
+                      <button type="button" class="btn btn-success btn-circle" id = "remove:<%=menu.id%>">-</button>
                     </div>
                   </form>
               </div>
               <%}%>
-              <button type="button" class="btn btn-primary">Go Back</button>
+              <button type="button" class="btn btn-default">Go Back</button>
       </main>
 
-      <form class="container is-shrink">
+      <form class="col">
               <p>Your Order</p>
               <p>Item 1  $10.00</p>
               <p>Item 2 $20.00</p>
@@ -46,6 +47,7 @@
               </footer>
                 <a href="/" class="btn btn-primary">Order Now</a>
       </form>
+    </div>
     </div>
   <% include ./partials/_footer %>
   </body>

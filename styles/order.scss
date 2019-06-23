@@ -1,11 +1,8 @@
 div.is-flex{
-    display: flex
+    display: flex;
 }
 div.main{
     height: 100vh;
-}
-aside.is-shrink{
-    flex-shrink: 2;
 }
 
 .is-border{
@@ -25,5 +22,15 @@ div.order-container{
 
 .is-font-item{
     font-family: 'Knewave', cursive;
-    font-size: 30px; 
+    font-size: 25px bold;  
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
 }
