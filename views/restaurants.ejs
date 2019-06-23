@@ -15,20 +15,13 @@
       <% for(var j = 0; j < restoInfo.length / 4; j++){ %>
         <section class = "form-inline">
         <% for(var i = 0; i < 4; i++){ %>
-<<<<<<< HEAD
-          <p>
-            <a href="/restaurant/<%= restoInfo[i + 4 * j].id %>"> <%= restoInfo[i + 4 * j].name %> </a>
-            <br>
-            <img src="https://images.deliveryhero.io/image/fd-ca/LH/e3ng-listing.jpg?width=800&height=584">
-
-=======
           <p class='border'>
-            <img src="https://images.deliveryhero.io/image/fd-ca/LH/s0hu-listing.jpg?width=800&height=584"> 
+            <img src=<%=restoInfo[i + 4 * j].image%>> 
             <br> 
-            <a href="/restaurants/<%= restoInfo[i + 4 * j].id %>"> <%= restoInfo[i + 4 * j].name %> </a> 
+            <span class='restaurent-tittle'>
+            <a href="/restaurant/<%= restoInfo[i + 4 * j].id %>"> <%= restoInfo[i + 4 * j].name %> </a> 
+            </span> 
             <br>
-            <span class='details'>$$$, vegan, salad, vegetarian, healthy food</span> 
->>>>>>> feature/restaurants-css
           </p>
          <% } %>
       <% } %>
