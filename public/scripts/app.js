@@ -33,16 +33,16 @@ $(document).ready(function() {
     var total = 0;
     for (item in orderObj){
       html +=`<div>
-                <span class='is-font-for-orders-description'>${orderObj[item].name}</span>
-                <span class='is-font-for-orders-description'>Quantity: ${orderObj[item].freq}</span>
-                <span class='is-font-for-orders-description'>$${round(orderObj[item].price * orderObj[item].freq)}</span>
+                <span class="is-trial-font">${orderObj[item].name}</span>
+                <span class="is-trial-font">Quantity: ${orderObj[item].freq}</span>
+                <span class="is-trial-font">$${round(orderObj[item].price * orderObj[item].freq)}</span>
               </div>`;
       total += orderObj[item].price * orderObj[item].freq;
     }
     html += `<div>
-                <span class='is-font-for-orders-description'> BEFORE TAX: $${round(total)} </span>
-                <span class='is-font-for-orders-description'> TAX: $${round(total*0.15)} </span>
-                <span class='is-font-for-orders-description'> TOTAL: $${round(total*1.15)} </span>
+                <span class="is-trial-font"> BEFORE TAX: $${round(total)} </span>
+                <span class="is-trial-font"> TAX: $${round(total*0.15)} </span>
+                <span class="is-trial-font"> TOTAL: $${round(total*1.15)} </span>
               </div>`
 
     return html;
