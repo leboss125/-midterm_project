@@ -4,6 +4,19 @@ const express = require('express');
 const router  = express.Router();
 var twilio = require('twilio');
 
+function random_boolean(){
+  return (Math.random() >= 0.25);
+}
+
+function generateRandomNumber(num) {
+  var chars = '1234567890';
+  var randomString = '';
+  for (var i = 0; i < num; i++){
+    randomString = randomString + chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return parseInt(randomString);
+}
+
 module.exports = (knex) => {
 
   router.get("/:id", (req, res) => {
@@ -35,32 +48,81 @@ module.exports = (knex) => {
 
 
 
-      var accountSid = 'AC324e4b947a9a446ad2250037f1e9f268'; // Your Account SID from www.twilio.com/console
-      var authToken = 'cc2f2227e77ac2b565ddab161df5b77c';   // Your Auth Token from www.twilio.com/console
+      var accountSid = ''; // Your Account SID from www.twilio.com/console
+      var authToken = '';   // Your Auth Token from www.twilio.com/console
 
       var client = new twilio(accountSid, authToken);
+      var orderId = generateRandomNumber(6);
 
-      console.log('POST result is:' ,req.body);
+      //console.log('POST result is:' ,req.body);
 
       //POST REQUEST FOR ORDER STATUS TABLE: id, customer_id, restaurant_id, items(object), total_price
   // created_at, status, time_to_complite
 
       knex('orders').insert([{
+                id: orderId,
                 customer_id: req.session.id,
                 restaurent_id: parseInt(req.body.restaurant_id),
                 items: JSON.stringify(req.body.items),
-                total_price: parseInt(req.body.total_price)
+                total_price: parseInt(req.body.total_price),
+                status: 'Pending'
               }]).then(result => {
-                var accountSid = 'AC324e4b947a9a446ad2250037f1e9f268'; // Your Account SID from www.twilio.com/console
-                var authToken = 'cc2f2227e77ac2b565ddab161df5b77c';   // Your Auth Token from www.twilio.com/console
                 var client = new twilio(accountSid, authToken);
 
                 client.messages.create({
-                  body: 'Your order is ready',
-                  to: '+14384041793',  // Text this number
+                  body: `You have an order request, order is chicken from ${req.session.name}`,
+                  to: '',  // Text this number
                   from: '+12897961008' // From a valid Twilio number
                 })
                 .then((message) => console.log(message.sid));
+
+                setTimeout(function(){
+                  if(random_boolean() === true){
+                    client.messages.create({
+                      body: `You order has been accepted`,
+                      to: `+1${req.session.phone_number}`,  // Text this number
+                      from: '+12897961008' // From a valid Twilio number
+                    })
+                    .then((message) => console.log(message.sid));
+                    knex('orders').where({ id: orderId }).update({ status: 'Accepted' }).then()
+
+                    setTimeout(function(){
+                      client.messages.create({
+                        body: `You order is ready for pickup`,
+                        to: `+1${req.session.phone_number}`,  // Text this number
+                        from: '+12897961008' // From a valid Twilio number
+                      })
+                      .then((message) => console.log(message.sid));
+                      knex('orders').where({ id: orderId }).update({ status: 'Ready' }).then()
+
+                      setTimeout(function(){
+                        client.messages.create({
+                          body: `You order is completed. Thank you for choosing Petit Poulet`,
+                          to: `+1${req.session.phone_number}`,  // Text this number
+                          from: '+12897961008' // From a valid Twilio number
+                        })
+                        .then((message) => console.log(message.sid));
+                        knex('orders').where({ id: orderId }).update({ status: 'Completed' }).then()
+                      },10000)
+
+
+                    },20000)
+
+
+                  }
+                  else{
+                    client.messages.create({
+                      body: `You order has been declined`,
+                      to: `+1${req.session.phone_number}`,  // Text this number
+                      from: '+12897961008' // From a valid Twilio number
+                    })
+                    .then((message) => console.log(message.sid));
+                    knex('orders').where({ id: orderId }).update({ status: 'Declined' }).then()
+                  }
+
+
+                },15000)
+
               })
 
 

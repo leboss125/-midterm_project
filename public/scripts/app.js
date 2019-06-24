@@ -109,7 +109,7 @@ $(document).ready(function() {
           url: '/restaurant',
           data: {
             items: checkFrequency(),
-            total_price: finalTotal,
+            total_price: (finalTotal * 1.15).toFixed(2),
             restaurant_id: restoId
           }
         }).done(result => console.log(result))

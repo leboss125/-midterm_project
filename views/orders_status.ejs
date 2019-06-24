@@ -13,19 +13,20 @@
     <main class = "order-status col-7">
       <section class = "orders-list">
                   <h2 class='is-font-for-orders'>Order Status</h2>
+                  <% for(var i = 0; i < orderStatus.length; i++){ %>
                   <section class="order">
-                      <h4 class='is-font-for-orders-id'>Order ID: HX20</h4>
-                      <span class="is-font-for-orders-description">Restaurant: Mandy's Salad</span><br>
-                      <span class="is-font-for-orders-description">Order Time: </span><br>
-                      <span class="is-font-for-orders-description">Current Status: </span>
+                      <h4 class='is-font-for-orders-id'>Order ID: <%= orderStatus[i].id %></h4>
+                      <span class="is-font-for-orders-description">Order Amount: $<%= orderStatus[i].total_price %></span><br>
+                      <span class="is-font-for-orders-description">Order Time: <%= orderStatus[i].created_at %></span><br>
+                      <span class="is-font-for-orders-description">Order Status: <%= orderStatus[i].status %></span>
                   </section>
-                  </section>
+                  <% } %>
       </section>
     </main>
     <aside class="col">
     <img src="http://cafesantorini.com/wp-content/uploads/2017/02/75.jpg">
     </aside>
-    </div> 
+    </div>
     </div>
     <% include ./partials/_footer %>
   </body>
