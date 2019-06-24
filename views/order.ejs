@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap&subset=cyrillic,hebrew,latin-ext,vietnamese" rel="stylesheet">
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro&display=swap" rel="stylesheet">
   </head>
 
   <body>
@@ -27,8 +28,8 @@
                 <div class="is-border order-container" >
 
                 <p class="is-font-item"><%=menu.name%></p>
-                <p><%=menu.description%></p>
-                 <p id = "<%=menu.id%>">Price: $<%=menu.price%></p>
+                <p class="is-trial-font"><%=menu.description%></p>
+                 <p id = "<%=menu.id%>" class="is-trial-font">Price: $<%=menu.price%></p>
                   <form>
                     <div class="form-check">
                       <button type="button" class="btn btn-success btn-circle" id = "add:<%=menu.id%>">+</button>
