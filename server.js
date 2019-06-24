@@ -22,6 +22,7 @@ const loginRoute = require('./routes/login_route');
 const registerRoute = require('./routes/register_route');
 const restaurantsRoute = require('./routes/restaurants_route');
 const orderStatusRoute = require('./routes/order_status_route');
+const orderHistoryRoute = require('./routes/order_history_route');
 
 const orderRoute = require("./routes/order_route");
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
@@ -56,7 +57,8 @@ app.use("/", loginRoute(knex));
 app.use("/register", registerRoute(knex));
 app.use("/restaurants", restaurantsRoute(knex));
 app.use("/orders", orderStatusRoute(knex));
-app.use("/restaurant", orderRoute(knex)); 
+app.use("/restaurant", orderRoute(knex));
+app.use("/history", orderHistoryRoute(knex));
 
 
 // logout route

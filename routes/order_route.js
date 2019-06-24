@@ -48,8 +48,8 @@ module.exports = (knex) => {
 
 
 
-      var accountSid = ''; // Your Account SID from www.twilio.com/console
-      var authToken = '';   // Your Auth Token from www.twilio.com/console
+      var accountSid = 'AC324e4b947a9a446ad2250037f1e9f268'; // Your Account SID from www.twilio.com/console
+      var authToken = 'cc2f2227e77ac2b565ddab161df5b77c';   // Your Auth Token from www.twilio.com/console
 
       var client = new twilio(accountSid, authToken);
       var orderId = generateRandomNumber(6);
@@ -70,8 +70,8 @@ module.exports = (knex) => {
                 var client = new twilio(accountSid, authToken);
 
                 client.messages.create({
-                  body: `You have an order request, order is chicken from ${req.session.name}`,
-                  to: '',  // Text this number
+                  body: `You have an order request ${orderId} from from ${req.session.name}`,
+                  to: '+14384041793',  // Text this number
                   from: '+12897961008' // From a valid Twilio number
                 })
                 .then((message) => console.log(message.sid));
@@ -79,7 +79,7 @@ module.exports = (knex) => {
                 setTimeout(function(){
                   if(random_boolean() === true){
                     client.messages.create({
-                      body: `You order has been accepted`,
+                      body: `You order ${orderId} has been accepted`,
                       to: `+1${req.session.phone_number}`,  // Text this number
                       from: '+12897961008' // From a valid Twilio number
                     })
@@ -88,7 +88,7 @@ module.exports = (knex) => {
 
                     setTimeout(function(){
                       client.messages.create({
-                        body: `You order is ready for pickup`,
+                        body: `You order ${orderId} is ready for pickup`,
                         to: `+1${req.session.phone_number}`,  // Text this number
                         from: '+12897961008' // From a valid Twilio number
                       })
@@ -97,13 +97,13 @@ module.exports = (knex) => {
 
                       setTimeout(function(){
                         client.messages.create({
-                          body: `You order is completed. Thank you for choosing Petit Poulet`,
+                          body: `You order ${orderId} is completed. Thank you for choosing Foodoodoo`,
                           to: `+1${req.session.phone_number}`,  // Text this number
                           from: '+12897961008' // From a valid Twilio number
                         })
                         .then((message) => console.log(message.sid));
                         knex('orders').where({ id: orderId }).update({ status: 'Completed' }).then()
-                      },10000)
+                      },20000)
 
 
                     },20000)
@@ -112,7 +112,7 @@ module.exports = (knex) => {
                   }
                   else{
                     client.messages.create({
-                      body: `You order has been declined`,
+                      body: `You order ${orderId} has been declined`,
                       to: `+1${req.session.phone_number}`,  // Text this number
                       from: '+12897961008' // From a valid Twilio number
                     })

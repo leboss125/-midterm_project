@@ -6,22 +6,22 @@ div.main{
 }
 
 div.is-border-top{
-    border-top: solid; 
+    border-top: solid;
 }
 
 div.order-container{
     padding: 10px;
-    margin-bottom: 30px; 
+    margin-bottom: 30px;
 }
 
 .is-font-item{
     font-family: 'Knewave', cursive;
-    font-size: 25px bold;  
+    font-size: 25px bold;
 }
 
 .is-font-description{
     font-family: 'Knewave', cursive;
-    font-size: 25px bold;  
+    font-size: 25px bold;
 }
 
 .btn-circle {
@@ -32,4 +32,9 @@ div.order-container{
     text-align: center;
     font-size: 12px;
     line-height: 1.42857;
+}
+
+a.btn-primary {
+  margin-left: 100px;
+  margin-top: 50px;
 }

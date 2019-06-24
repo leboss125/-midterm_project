@@ -5,13 +5,15 @@
 <% if(typeof name !== 'undefined' ){%>
      <nav id="nav-bar">
    <span class='is-main-tittle'>
-   <a href="/" class='is-username'><i class="fa fa-drumstick-bite"></i>Petit Poulet</a>
+   <a href="/" class='is-username'><i class="fa fa-drumstick-bite"></i>Foodoodoo</a>
    <p class='is-username'><i class="fa fa-user"></i><%= name %></p>
    </span>
    <span class='is-logout-name is-username'>
      <a href="/logout">Logout</a>
      |
      <a href="/orders">Order Status</a>
+     |
+     <a href="/history">Order History</a>
    </span>
  </nav>
  <%}else{ %>
