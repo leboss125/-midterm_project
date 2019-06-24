@@ -10,11 +10,11 @@
     <% include ./partials/_header %>
      <div class='container-fluid'>
          <div class='row'>
-    <main class = "order-status col-7">
+    <main class = "order-history col-7">
       <section class = "orders-list">
-                  <h2 class='is-font-for-orders'>Order Status</h2>
+                  <h2 class='is-font-for-orders'>Order History</h2>
                   <% for(var i = 0; i < orderStatus.length; i++){ %>
-                    <% if(orderStatus[i].status !== 'Completed'&&orderStatus[i].status !== 'Declined'){ %>
+                    <% if(orderStatus[i].status === 'Completed'||orderStatus[i].status === 'Declined'){ %>
                       <section class="order">
                           <h4 class='is-font-for-orders-id'>Order ID: <%= orderStatus[i].id %></h4>
                           <span class="is-font-for-orders-description">Order Amount: $<%= orderStatus[i].total_price %></span><br>
