@@ -3,27 +3,30 @@
   <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+     <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Montserrat&display=swap" rel="stylesheet">
   </head>
 
   <body>
     <% include ./partials/_header %>
-    <main class = "order-status">
+     <div class='container-fluid'>
+         <div class='row'>
+    <main class = "order-status col-7">
       <section class = "orders-list">
-                  <h2>Order Status</h2>
+                  <h2 class='is-font-for-orders'>Order Status</h2>
                   <section class="order">
-                      <h4>Order ID: HX20</h4>
-                      <span>Restaurant: Mandy's Salad</span>
-                      <span>Order Time: </span>
-                      <span>Current Status: </span>
+                      <h4 class='is-font-for-orders-id'>Order ID: HX20</h4>
+                      <span class="is-font-for-orders-description">Restaurant: Mandy's Salad</span><br>
+                      <span class="is-font-for-orders-description">Order Time: </span><br>
+                      <span class="is-font-for-orders-description">Current Status: </span>
                   </section>
-                  <section class="order">
-                      <h4>Order ID: HX20</h4>
-                      <span>Restaurant: Mandy's Salad</span>
-                      <span>Order Time: </span>
-                      <span>Current Status: </span>
                   </section>
       </section>
     </main>
+    <aside class="col">
+    <img src="http://cafesantorini.com/wp-content/uploads/2017/02/75.jpg">
+    </aside>
+    </div> 
+    </div>
     <% include ./partials/_footer %>
   </body>
 </html>
