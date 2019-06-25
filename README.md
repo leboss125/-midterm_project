@@ -1,4 +1,4 @@
-# Node Skeleton
+# FOODOODOO
 
 ## Project Introduction
 Foodoodoo is a web application that allows user to order food online and pickup for a later time. This appliction is built by Saad Hafa, Barry Chen, and Karine Seguin.
