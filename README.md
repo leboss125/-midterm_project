@@ -4,18 +4,18 @@
 Foodoodoo is a web application that allows registered users to order food online and pickup for a later time. This application is built by Saad Hafa, Barry Chen, and Karine Seguin.
 
 ## Final Product Screenshots
-- Upom visiting `http://localhost:8080/`, the user will be directed to the login page:
+- Upon visiting `http://localhost:8080/`, the user will be directed to the `Login` page:
 ![](https://github.com/leboss125/-midterm_project/blob/master/screenshots/Screen%20Shot%202019-06-24%20at%208.38.35%20PM.png)
-- The user should click `Create Account` to register for an account and enter the required field:
+- The user should click `Create Account` to register for an account and enter the required fields:
 ![](https://github.com/leboss125/-midterm_project/blob/master/screenshots/Screen%20Shot%202019-06-24%20at%208.39.18%20PM.png)
-- Once logged in, the user will be redirected to the restaurant main page and see the available restaurants to order from
+- Once logged in, the user will be redirected to the restaurant main page and see the available restaurants they can order from
 ![](https://github.com/leboss125/-midterm_project/blob/master/screenshots/Screen%20Shot%202019-06-24%20at%208.39.51%20PM.png)
 - The user may click on the restaurant link which will redirect them to the restaurant menu page
 ![](https://github.com/leboss125/-midterm_project/blob/master/screenshots/Screen%20Shot%202019-06-24%20at%208.41.05%20PM.png)
 - The user may choose the item and quantity they wish to order by clicking the `+` and `-` button beneath the items. An order summary including the total price will appear next to the menu.
-- The user can click `Order Now` to place an order, an order request will be sent to the restaturant. Meanwhile, the user will be directed to the `Order Status` page and can view the current status of the order as 'Pending'.
+- The user can click `Order Now` to place an order, an order request will be sent to the restaurant. Meanwhile, the user will be redirected to the `Order Status` page and can view the current status of the order as 'Pending'.
 ![](https://github.com/leboss125/-midterm_project/blob/master/screenshots/Screen%20Shot%202019-06-24%20at%208.54.09%20PM.png)
-- Once the restaurant accepts the order. The user will then receive a correspong sms message on their phone and the status of the order will be changed to 'Accepted'
+- Once the restaurant accepts the order. The user will then receive a corresponding sms message on their phone and the status of the order will be changed to 'Accepted'
 ![](https://github.com/leboss125/-midterm_project/blob/master/screenshots/64887449_796466794083165_5136017966680244224_n.jpg)
 ![](https://github.com/leboss125/-midterm_project/blob/master/screenshots/Screen%20Shot%202019-06-24%20at%208.54.35%20PM.png)
 
