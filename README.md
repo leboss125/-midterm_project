@@ -1,7 +1,7 @@
 # FOODOODOO
 
 ## Project Introduction
-Foodoodoo is a web application that allows user to order food online and pickup for a later time. This appliction is built by Saad Hafa, Barry Chen, and Karine Seguin.
+Foodoodoo is a web application that allows registered users to order food online and pickup for a later time. This application is built by Saad Hafa, Barry Chen, and Karine Seguin.
 
 ## Final Product Screenshots
 - Upom visiting `http://localhost:8080/`, the user will be directed to the login page:
