@@ -1,29 +1,45 @@
 # Node Skeleton
 
-## Project Setup
+## Project Introduction
+Foodoodoo is a web application that allows user to order food online and pickup for a later time. This appliction is built by Saad Hafa, Barry Chen, and Karine Seguin.
 
-1. Create your own empty repo on GitHub
-2. Clone this repository (do not fork)
-  - Suggestion: When cloning, specify a different folder name that is relevant to your project
-3. Remove the git remote: `git remote rm origin`
-4. Add a remote for your origin: `git remote add origin <your github repo URL>`
-5. Push to the new origin: `git push -u origin master`
-6. Verify that the skeleton code now shows up in your repo on GitHub
+## Final Product Screenshots
+- Upom visiting `http://localhost:8080/`, the user will be directed to the login page:
+![](https://github.com/leboss125/-midterm_project/blob/master/screenshots/Screen%20Shot%202019-06-24%20at%208.38.35%20PM.png)
+- The user should click `Create Account` to register for an account and enter the required field:
+![](https://github.com/leboss125/-midterm_project/blob/master/screenshots/Screen%20Shot%202019-06-24%20at%208.39.18%20PM.png)
+- Once logged in, the user will be redirected to the restaurant main page and see the available restaurants to order from
+![](https://github.com/leboss125/-midterm_project/blob/master/screenshots/Screen%20Shot%202019-06-24%20at%208.39.51%20PM.png)
+- The user may click on the restaurant link which will redirect them to the restaurant menu page
+![](https://github.com/leboss125/-midterm_project/blob/master/screenshots/Screen%20Shot%202019-06-24%20at%208.41.05%20PM.png)
+- The user may choose the item and quantity they wish to order by clicking the `+` and `-` button beneath the items. An order summary including the total price will appear next to the menu.
+- The user can click `Order Now` to place an order, an order request will be sent to the restaturant. Meanwhile, the user will be directed to the `Order Status` page and can view the current status of the order as 'Pending'.
+![](https://github.com/leboss125/-midterm_project/blob/master/screenshots/Screen%20Shot%202019-06-24%20at%208.54.09%20PM.png)
+- Once the restaurant accepts the order. The user will then receive a correspong sms message on their phone and the status of the order will be changed to 'Accepted'
+![](https://github.com/leboss125/-midterm_project/blob/master/screenshots/64887449_796466794083165_5136017966680244224_n.jpg)
+![](https://github.com/leboss125/-midterm_project/blob/master/screenshots/Screen%20Shot%202019-06-24%20at%208.54.35%20PM.png)
 
-## Getting Started
-
-1. Create the `.env` by using `.env.example` as a reference: `cp .env.example .env`
-2. Update the .env file with your correct local information
-3. Install dependencies: `npm i`
-4. Fix to binaries for sass: `npm rebuild node-sass`
-5. Run migrations: `npm run knex migrate:latest`
-  - Check the migrations folder to see what gets created in the DB
-6. Run the seed: `npm run knex seed:run`
-  - Check the seeds file to see what gets seeded in the DB
-7. Run the server: `npm run local`
-8. Visit `http://localhost:8080/`
-
+- Once the order is ready for pickup, the user shall receive another sms message on their phone and the status of the order will be changed to 'Ready'
+![](https://github.com/leboss125/-midterm_project/blob/master/screenshots/65736145_593740377781669_680116304773906432_n.jpg)
+![](https://github.com/leboss125/-midterm_project/blob/master/screenshots/Screen%20Shot%202019-06-24%20at%208.54.55%20PM.png)
+- Finally, once the user picks up the food. They should receive a final text message saying their order is completed. The order will then be stored into the `Order History` page and its status labeled as 'Completed'
+![](https://github.com/leboss125/-midterm_project/blob/master/screenshots/65378892_1095170254009096_7623004262439583744_n.jpg)
+![](https://github.com/leboss125/-midterm_project/blob/master/screenshots/Screen%20Shot%202019-06-24%20at%208.57.05%20PM.png)
 ## Dependencies
 
-- Node 5.10.x or above
-- NPM 3.8.x or above
+- Node.js
+- EJS
+- Bootstrap 3
+- jQuery
+- SASS
+- knex.js
+- PostgreSQL
+- cookie-session
+
+## Getting Started
+1. Clone the repository
+2. Install all dependencies using `npm install`
+3. Run data migrations: `npm run knex migrate:latest`
+4. Run the seed: `npm run knex seed:run`
+5. Run the server: `node server.js`
+6. Visit `http://localhost:8080/`
