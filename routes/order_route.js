@@ -48,8 +48,8 @@ module.exports = (knex) => {
 
 
 
-      var accountSid = 'AC324e4b947a9a446ad2250037f1e9f268'; // Your Account SID from www.twilio.com/console
-      var authToken = 'cc2f2227e77ac2b565ddab161df5b77c';   // Your Auth Token from www.twilio.com/console
+      var accountSid = ''; // Your Account SID from www.twilio.com/console
+      var authToken = '';   // Your Auth Token from www.twilio.com/console
 
       var client = new twilio(accountSid, authToken);
       var orderId = generateRandomNumber(6);
@@ -71,8 +71,8 @@ module.exports = (knex) => {
 
                 client.messages.create({
                   body: `You have an order request ${orderId} from from ${req.session.name}`,
-                  to: '+14384041793',  // Text this number
-                  from: '+12897961008' // From a valid Twilio number
+                  to: '',  // Text this number
+                  from: '' // From a valid Twilio number
                 })
                 .then((message) => console.log(message.sid));
 
@@ -90,7 +90,7 @@ module.exports = (knex) => {
                       client.messages.create({
                         body: `You order ${orderId} is ready for pickup`,
                         to: `+1${req.session.phone_number}`,  // Text this number
-                        from: '+12897961008' // From a valid Twilio number
+                        from: '' // From a valid Twilio number
                       })
                       .then((message) => console.log(message.sid));
                       knex('orders').where({ id: orderId }).update({ status: 'Ready' }).then()
